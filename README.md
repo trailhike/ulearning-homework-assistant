@@ -44,11 +44,14 @@ pip install requests openpyxl
 ```
 
 ## 🔧 参数修改
-修改扫描课程数量：打开源码，找到 `HomeworkChecker` 类：
+修改扫描课程数量和屏蔽关键字：打开源码，找到 `HomeworkChecker` 类：
 ```python
 class HomeworkChecker:
     """作业扫描核心逻辑类"""
-    PAGE_SIZE = 20    # 在这里修改，调大可以读取更多课程
+    PAGE_SIZE = 20    # 扫描课程数量，调大可以读取更多课程
+    def __init__(self, token: str, user_id: str):
+        ...
+        self.bypass_keyword = "读书心得"    # 屏蔽关键字，被屏蔽的课程不会扫描作业
 ```
 
 ## 🐛 常见问题
