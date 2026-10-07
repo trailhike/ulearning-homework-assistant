@@ -51,7 +51,7 @@ class HomeworkChecker:
     PAGE_SIZE = 20    # 扫描课程数量，调大可以读取更多课程
     def __init__(self, token: str, user_id: str):
         ...
-        self.bypass_keyword = "读书心得"    # 屏蔽关键字，被屏蔽的课程不会扫描作业
+        self.bypass_keyword = "读书心得"    # 屏蔽关键字，不会扫描被屏蔽的课程下的作业
 ```
 
 ## 🐛 常见问题
